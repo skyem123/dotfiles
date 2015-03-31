@@ -2,6 +2,11 @@
 # ~/.bashrc
 #
 
+# include .rc if it exists
+if [ -f "$HOME/.rc" ]; then
+    . "$HOME/.rc"
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
