@@ -12,7 +12,7 @@ fi
 
 alias ls='ls --color=auto'
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
+# uncomment for a coloured prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
@@ -34,5 +34,3 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

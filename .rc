@@ -1,7 +1,13 @@
+# Enable nix for local user (if installed)
+if [ -s "/etc/profile.d/nix.sh" ] ; then
+	source /etc/profile.d/nix.sh
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# Enable RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -4,24 +4,14 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
+
+if [ -n "$BASH_VERSION" ]; then # if running bash, include .bashrc
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
 	. "$HOME/.bashrc"
     fi
+elif [ -f "$HOME/.rc" ]; then # if not, just include .rc
+    export "$HOME/.rc"
 fi
-
-# include .rc if it exists
-if [ -f "$HOME/.rc" ]; then
-    . "$HOME/.rc"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 true #Reset last exit code to 0
